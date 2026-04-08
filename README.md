@@ -61,7 +61,7 @@ bash ssh/setup.sh
 - `PermitRootLogin prohibit-password`
 - `UsePAM yes`
 - `X11Forwarding no`
-- `MaxAuthTries 3`
+- `MaxAuthTries 10`
 - `ClientAliveInterval 300`
 - `ClientAliveCountMax 2`
 

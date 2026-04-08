@@ -64,3 +64,5 @@ echo "Test SSH from another terminal before closing the current session:"
 echo "ssh -p $SSH_PORT root@<server-ip>"
 echo "To open an extra port: ./ssh/open 3000"
 echo "To close an extra port: ./ssh/close 3000"
+echo "Current ssh.service status:"
+systemctl status ssh.service --no-pager

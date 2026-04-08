@@ -6,6 +6,7 @@ This repo keeps the setup minimal.
 - validates SSH with `sshd -t`
 - disables `ssh.socket` and starts `ssh.service`
 - enables only `80/tcp`, `443/tcp`, and `10022/tcp` in UFW
+- prints `systemctl status ssh.service --no-pager` at the end
 
 It assumes the server already uses the standard Debian/Ubuntu `Include /etc/ssh/sshd_config.d/*.conf` line in `/etc/ssh/sshd_config`.
 

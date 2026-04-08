@@ -30,6 +30,9 @@ fi
 
 cp "$SOURCE_CONFIG" "$TARGET_CONFIG"
 
+echo "Creating runtime directory..."
+install -d -m 0755 /run/sshd
+
 echo "Validating sshd config..."
 sshd -t
 

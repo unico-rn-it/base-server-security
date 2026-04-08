@@ -36,8 +36,11 @@ sshd -t
 echo "Reloading systemd daemon..."
 systemctl daemon-reload
 
-echo "Restarting ssh.socket..."
-systemctl restart ssh.socket
+echo "Switching from ssh.socket to ssh.service..."
+systemctl stop ssh.socket || true
+systemctl disable ssh.socket || true
+systemctl enable --now ssh.service
+systemctl restart ssh.service
 
 echo "Configuring firewall..."
 

@@ -4,7 +4,7 @@ This repo keeps the setup minimal.
 
 - [ssh/setup.sh](/Users/niktverd/code/unico.rn.it-dir/base-server-security/ssh/setup.sh) installs [ssh/sshd_config](/Users/niktverd/code/unico.rn.it-dir/base-server-security/ssh/sshd_config) as `/etc/ssh/sshd_config.d/99-hardening.conf`
 - validates SSH with `sshd -t`
-- restarts `ssh.socket`
+- disables `ssh.socket` and starts `ssh.service`
 - enables only `80/tcp`, `443/tcp`, and `10022/tcp` in UFW
 
 It assumes the server already uses the standard Debian/Ubuntu `Include /etc/ssh/sshd_config.d/*.conf` line in `/etc/ssh/sshd_config`.

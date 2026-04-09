@@ -59,6 +59,11 @@ ufw allow "$HTTP_PORT/tcp"
 ufw allow "$HTTPS_PORT/tcp"
 ufw --force enable
 
+echo "Installing fail2ban..."
+apt-get install fail2ban -y
+systemctl enable fail2ban
+systemctl start fail2ban
+
 echo "Done."
 echo "Test SSH from another terminal before closing the current session:"
 echo "ssh -p $SSH_PORT root@<server-ip>"
